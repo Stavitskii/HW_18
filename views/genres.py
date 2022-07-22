@@ -1,12 +1,17 @@
 from flask_restx import Resource, Namespace
 
-genres_ns = Namespace('genres')
+genre_ns = Namespace('genres')
 
 
-@book_ns.route('/')
-class BooksView(Resource):
+@genre_ns.route('/')
+class GenresView(Resource):
     def get(self):
         return "", 200
 
-    def post(self):
-        return "", 201
+
+
+@genre_ns.route('/<int:genre_id>')
+class GenreView(Resource):
+    def get(self, genre_id):
+        return "", 200
+
